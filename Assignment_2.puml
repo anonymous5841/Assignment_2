@@ -1,0 +1,110 @@
+@startuml
+class Tables {
+- String shape
+- String material
+- int dimensions
++ String getShape()
++ void setShape(String)
++ String getMaterial()
++ void setMaterial(String)
++ int getDimensions()
++ void setDimensions(int)
+}
+class Category {
+}
+class Seating {
+- String material
+- int dimensions
+- int Load_capacity
++ String getMaterial()
++ void setMaterial(String)
++ int getDimensions()
++ void setDimensions(int)
++ int getLoad_capacity()
++ void setLoad_capacity(int)
+}
+class Laptops {
+- String processor_type
+- String RAM_size
+- int Screen_Dimensions
++ String getProcessor_type()
++ void setProcessor_type(String)
++ String getRAM_size()
++ void setRAM_size(String)
++ int getScreen_Dimensions()
++ void setScreen_Dimensions(int)
+}
+class Main {
++ {static} void main(String[])
+}
+class Audio_Device {
+}
+class Products {
+- int stock_quantity
+- int tax
+- String Name
+- double prize
+- int sell
++ int getStock_quantity()
++ void setStock_quantity(int)
++ int getTax()
++ void setTax(int)
++ String getName()
++ void setName(String)
++ double getPrize()
++ void setPrize(double)
++ int getSell()
++ void setSell(int)
+}
+class Reports {
+~ Groceries groceries
+~ Furniture furniture
+~ Electronics electronics
++ String SalesTrend()
+}
+class Groceries {
+- int expiry_date
+- String nutritional_value
++ int getExpiry_date()
++ void setExpiry_date(int)
++ String getNutritional_value()
++ void setNutritional_value(String)
+}
+class Furniture {
+- String material
+- int Dimensions
++ String getMaterial()
++ void setMaterial(String)
++ int getDimensions()
++ void setDimensions(int)
+}
+class Electronics {
+- int power
+- boolean warranty
++ int getPower()
++ void setPower(int)
++ boolean isWarranty()
++ void setWarranty(boolean)
+}
+class SmartPhones {
+- String Operating_String
+- int Storage_capacity
+- String Camera_Resolution
++ String getOperating_String()
++ void setOperating_String(String)
++ int getStorage_capacity()
++ void setStorage_capacity(int)
++ String getCamera_Resolution()
++ void setCamera_Resolution(String)
+}
+
+
+Furniture <|-- Tables
+Furniture <|-- Seating
+Electronics <|-- Laptops
+Electronics <|-- Audio_Device
+Products <|-- Groceries
+Products <|-- Furniture
+Products <|-- Electronics
+Electronics <|-- SmartPhones
+@enduml
